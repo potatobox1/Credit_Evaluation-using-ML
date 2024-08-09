@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Default Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Default Prediction Using ML</h1>
+        <form id="prediction-form" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="disbursed_amount">Disbursed Amount (PKR):</label>
+                <input type="number" id="disbursed_amount" name="disbursed_amount" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="asset_cost">Asset Cost (PKR):</label>
+                <input type="number" id="asset_cost" name="asset_cost" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ltv">Loan to Value (ratio):</label>
+                <input type="number" id="ltv" name="ltv" min="0" max = "100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar_flag">Aadhar Flag:</label>
+                <input type="hidden" name="aadhar_flag" value="0">
+                <input type="checkbox" id="aadhar_flag" name="aadhar_flag" value="1">
+            </div>
+
+            <div class="form-group">
+                <label for="voterid_flag">Voter ID:</label>
+                <input type="hidden" name="voterid_flag" value="0">
+                <input type="checkbox" id="voterid_flag" name="voterid_flag" value="1">
+            </div>
+
+            <div class="form-group">
+                <label for="credit_score">Credit Score:</label>
+                <input type="number" id="credit_score" name="credit_score" min="300" max="850">
+            </div>
+
+            <div class="form-group">
+                <label for="num_accs">Number of Total Loans:</label>
+                <input type="number" id="num_accs" name="num_accs" min = "0" max = "50">
+            </div>
+
+            <div class="form-group">
+                <label for="num_active">Number of Active Loans:</label>
+                <input type="number" id="num_active" name="num_active" min = "0" max = "50">
+            </div>
+
+            <div class="form-group">
+                <label for="num_overdue">Number of Default Loans:</label>
+                <input type="number" id="num_overdue" name="num_overdue" min = "0" max = "50">
+            </div>
+
+            <div class="form-group">
+                <label for="account_balance">Account Balance:</label>
+                <input type="number" id="account_balance" name="account_:balance" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="num_new">Number of New Loans in Past 6 Months:</label>
+                <input type="number" id="num_new" name="num_new" min = "0" max = "50">
+            </div>
+
+            <div class="form-group">
+                <label for="num_delinquent">Delinquent Acts in Past 6 Months:</label>
+                <input type="number" id="num_delinquent" name="num_delinquent" min = "0" max = "50">
+            </div>
+
+            <div class="form-group">
+                <label for="num_inquiries">Number of Inquiries by the Customer:</label>
+                <input type="number" id="num_inquiries" name="num_inquiries" min = "0" max = "50">
+            </div>
+
+            <div class="form-group">
+                <label for="credit_grade">Credit Grade:</label>
+                <select id="credit_grade" name="credit_grade">
+                    <option value="4">A</option>
+                    <option value="3">B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">E</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="employment">Employment Status:</label>
+                <select id="employment" name="employment">
+                    <option value="0">Un-Employed</option>
+                    <option value="1">Self-Employed</option>
+                    <option value="2">Salaried</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="100">
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result-container">
+            <p id="result"></p>
+        </div>
+        <div class="description-container">
+            <p id="description"></p>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
